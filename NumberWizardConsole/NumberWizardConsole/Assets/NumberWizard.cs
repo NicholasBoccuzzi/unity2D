@@ -8,13 +8,7 @@ public class NumberWizard : MonoBehaviour {
 		int guess = 500;
 	// Use this for initialization
 	void Start () {
-		max = max + 1;
-		Debug.Log("Welcome to Number Wizard!");
-		Debug.Log("Pick a number, but don't tell me what it is!");
-		Debug.Log("Highest number is: " + max);
-		Debug.Log("Lowest number is: " + min);
-		Debug.Log("Tell me if your number is higher or lower than " + guess);
-		Debug.Log("Push Up = Higher, Push Down = Lower, Push Enter = Correct");
+		StartGame();
 	}
 	
 	// Update is called once per frame
@@ -35,5 +29,15 @@ public class NumberWizard : MonoBehaviour {
 		} else if (Input.GetKeyDown(KeyCode.Return)) {
 			Debug.Log("I did it! Your number is " + guess + "!");
 		}
+	}
+
+	void StartGame () {
+		max = max + 1;
+		Debug.Log("Welcome to Number Wizard!");
+		Debug.Log("Pick a number, but don't tell me what it is!");
+		Debug.Log("Highest number is: " + max);
+		Debug.Log("Lowest number is: " + min);
+		Debug.Log("Tell me if your number is higher or lower than " + guess);
+		Debug.Log("Push Up = Higher, Push Down = Lower, Push Enter = Correct");
 	}
 }
