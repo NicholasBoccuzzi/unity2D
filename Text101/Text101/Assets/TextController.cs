@@ -21,7 +21,7 @@ public class TextController : MonoBehaviour {
 		}
 
 		if (myState == States.cell) {
-			state_cell_cell
+			state_cell();
 		}
 	}
 
