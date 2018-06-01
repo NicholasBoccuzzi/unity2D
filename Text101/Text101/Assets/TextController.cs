@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class TextController : MonoBehaviour {
 
-	private enum States {opening, cell, mirror, running, freedom, sheet, lock0, sheet_start, sheet_in_hand, right, left, death};
+	private enum States {opening, cell, mirror, running, outside, sheet, lock0, sheet_start, sheet_in_hand, right, left, death, alley, police_cars, wrong_car, right_car, wall, jump, jump2};
 	private States myState;
 	public Text text;
 	private bool sheetsInHand = false;
 	private bool mirrorInHand = false;
+	private bool jumped = false;
+	private bool jumped2 = false;
 
 	// Use this for initialization
 	void Start () {
@@ -38,8 +40,20 @@ public class TextController : MonoBehaviour {
 			state_right();
 		}	else if (myState == States.death) {
 			state_death();
-		}	else if (myState == States.freedom) {
+		}	else if (myState == States.outside) {
 			state_death();
+		}	else if (myState == States.police_cars) {
+			state_police_cars();
+		}	else if (myState == States.alley) {
+			state_alley();
+		}	else if (myState == States.wrong_car) {
+			state_wrong_car();
+		}	else if (myState == States.right_car) {
+			state_right_car();
+		}	else if (myState == States.jump) {
+			state_jump();
+		}	else if (myState == States.jump2) {
+			state_jump2();
 		}
 	}
 
@@ -180,7 +194,7 @@ public class TextController : MonoBehaviour {
 		text.text = "John heads down the hall and finds the back of the police station. A fire exit! John lifts the window open and steps out. This was his only chance. \n\n press 'B' to make a break for it.";
 
 		if (Input.GetKeyDown(KeyCode.B)) {
-			myState = States.freedom;
+			myState = States.outside;
 		}
 	}
 
@@ -195,7 +209,7 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_death() {
-		text.text = "John burst into a sprint heading for the door. Heads turn, some get out of their chair, and one officer yells \"Freeze\" but it was too late. John wasn't going to stop now. He was so close to freedom! *BANG* *BANG* *BANG* *Thud* \n\n Game Over \n\n Press 'P' to play again"; 
+		text.text = "John burst into a sprint heading for the door. Heads turn, some get out of their chair, and one officer yells \"Freeze\" but it was too late. John wasn't going to stop now. He was so close to outside! *BANG* *BANG* *BANG* *Thud* \n\n Game Over \n\n Press 'P' to play again"; 
 
 		if (Input.GetKeyDown(KeyCode.P)) {
 			sheetsInHand = false;
@@ -204,8 +218,98 @@ public class TextController : MonoBehaviour {
 		}
 	}
 
-	void state_freedom() {
-		text.text = "John exited the police station and started running as fast as he could. He was never seen from again but some say he's still running today. \n\n Game Over\n\n Press 'P' to play again";
+	void state_outside() {
+		text.text = "John exited the police station and started climbing down the fire escape. To his right was a group of empty parked police cars and to his left was another alley. \n\n Which direction should John head? \n\n Press 'L' to head toward the alley or 'R' to head for the cop car";
+
+
+		if (Input.GetKeyDown(KeyCode.R)) {
+			myState = States.police_cars;
+		}
+
+		if (Input.GetKeyDown(KeyCode.L)) {
+			myState = States.alley;
+		}
+	}
+
+	void state_alley() {
+		text.text = "John turned the corner and was met with a large wall. He did track and field in high school but this wall was pretty high. Alas, this was the direction he chose to head. It wasn't too late for him to turn back though. \n\n Press 'b' to turn back and head to the police cars, or press 'w' to step up to the wall";
+
+		if (Input.GetKeyDown(KeyCode.B)) {
+				myState = States.police_cars;
+		}
+
+		if (Input.GetKeyDown(KeyCode.W)) {
+				myState = States.wall;
+		}
+	}
+	void state_wall() {
+		if (jumped || jumped2) {
+			text.text = "After attempting the jump he knew he wouldn't make it. He had to go back. Hopefully he hadn't wasted too much time. \n\n press 'b' to go back in the opposite direction";
+
+			if (Input.GetKeyDown(KeyCode.B)) {
+				myState = States.police_cars;
+			}
+		} else {
+			text.text = "He stepped up to the wall. Boy was it high. 'Should I just go back' he thought to himself. \n\n press 'b' to go back to the police cars, or press 'j' to jump";
+
+			if (Input.GetKeyDown(KeyCode.B)) {
+				myState = States.police_cars;
+			}
+
+			if (Input.GetKeyDown(KeyCode.J)) {
+				myState = States.jump;
+			}
+		}
+	}
+	void state_jump() {
+		jumped = true;
+
+		text.text = "He gave it a running start and smacked his body against the well. 'Was I close?' he thought. He couldn't tell. \n\n Press 'j' to try again";
+
+		
+		if (Input.GetKeyDown(KeyCode.J)) {
+			myState = States.jump2;
+		}
+	}
+	void state_jump2() {
+		text.text = "He gave it another attempt with everything he had. Running and jumping as fast and high as he could. His body smashed against the wall. He didn't make it. \n\n Press 'W' to go back to the wall, or press 'B' to head back to the police cars.";
+
+		if (Input.GetKeyDown(KeyCode.W)) {
+			myState = States.wall;
+		}
+
+		
+		if (Input.GetKeyDown(KeyCode.B)) {
+			myState = States.police_cars;
+		}
+	}
+
+	void state_police_cars () {
+		text.text = "This was the moment of truth. Hoping that one of the cars was unlocked, he would have just enough time to pick one car before someone noticed what he was doing. \n\n Which car should John pick? \n\n Press '1' for the first car, '2' for the second car, '3' for the third car.";
+		if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Keypad1)) {
+			myState = States.wrong_car;
+		}
+
+		
+		if (Input.GetKeyDown(KeyCode.Keypad2)) {
+			myState = States.right_car;
+		}
+	}
+
+	void state_wrong_car () {
+		text.text = "John ran up to the car as fast as he could. He would have to be quick. Get in the car, jump it, and get out of there. He attempted to open the door... Nothing. Locked. A police officer emerged from the station dropped his coffee and yelled 'FREEZE'. John had a moment to decide: \n\n press 'R' to make a run to the closest car, or 'g' to give in.";
+
+		if (Input.GetKeyDown(KeyCode.Keypad2)) {
+			myState = States.right_car;
+		}
+
+		if (Input.GetKeyDown(KeyCode.Keypad2)) {
+			myState = States.right_car;
+		}
+	}
+
+	void state_right_car() {
+		text.text = "He ran as fast as he could to the car. Praying it was unlocked he pulled the door open and, with his last bit of luck, found the keys sitting on the dashboard. He grabbed them, turned the key and sped off with a yelling officer in his rear view mirror.\n\n John was never heard from again but he managed to avoid an unwarranted end to his life. \n\n Thanks for playing! Press 'P' to play again!";
 
 		if (Input.GetKeyDown(KeyCode.P)) {
 			sheetsInHand = false;
@@ -214,3 +318,9 @@ public class TextController : MonoBehaviour {
 		}
 	}
 }
+
+		// if (Input.GetKeyDown(KeyCode.P)) {
+		// 	sheetsInHand = false;
+		// 	mirrorInHand = false;
+		// 	myState = States.cell;
+		// }
