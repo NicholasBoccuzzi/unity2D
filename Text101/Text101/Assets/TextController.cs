@@ -83,9 +83,10 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_opening () {
-		text.text = "John Wayne was a simple man who found himself in an unfortunate situation. After being found guilty" + 
-		"in court for a crime he did not commit, he was sentenced to death in 24 hours. With no alternative, John knew " + 
-		"he must escape from jail or he would meet his end.\n\nHelp John by guiding him through his escape!\n\nTo Begin, press Enter.";
+		text.text = "John Wayne is a simple man who has found himself in an unfortunate situation. After being found guilty" + 
+		"in court for a crime he did not commit, he was sentenced to death in 24 hours. With no alternative, John knows " + 
+		"he will have to escape from jail or he will meet his end.\n\nHelp John by guiding him through his escape!\n\n" +
+		"To Begin, press Enter.";
 
 		if (Input.GetKeyDown(KeyCode.Return)) {
 			myState = States.cell;
@@ -94,8 +95,8 @@ public class TextController : MonoBehaviour {
 
 	void state_cell () {
 		if (!sheetsInHand) {
-			text.text = "John stands in the middle of the room. Not much around. A mirror, a stone slab they call a " + 
-			"bed with some sheets on top, and a door with the biggest lock he'd ever seen. \n\nWhat is John's next move?\n\n" + 
+			text.text = "John stands in the middle of the cell. Not much around. A mirror, some sheets atop a stone slab they consider a " + 
+			"bed, and a door with the biggest lock he has ever seen. \n\nWhat is John's next move?\n\n" + 
 			"Press 'S' to view Sheets, press 'M' to view Mirror' and press 'L' to view Lock";
 
 			if (Input.GetKeyDown(KeyCode.S)) {
@@ -111,8 +112,8 @@ public class TextController : MonoBehaviour {
 			}
 
 		} else if (sheetsInHand) {
-			text.text = "John, with sheet in hand, had two options: check out the Mirror or go for the Lock \n\n" +
-			"press 'M' or press 'L' to decide";
+			text.text = "John, with sheet in hand, has two options: bust the Mirror or go for the Lock" +
+			"\n\nWhat is John's next move? \n\nPress 'M' to go for the mirror or press 'L' to pull on the lock.";
 
 			if (Input.GetKeyDown(KeyCode.M)) {
 				myState = States.mirror;
@@ -126,10 +127,10 @@ public class TextController : MonoBehaviour {
 
 	void state_mirror () {
 		if (!sheetsInHand) {
-			text.text = "All John saw was his ugly mug staring back at him. He needed to figure out how he could escape. " + 
-			"Maybe he could use a piece of the mirror, but the last thing he needed to do was cause a scene with . \n\n" + 
-			"a hand full of glass. \n\nWhat is John to do? \n\nPress 'S' to check out the sheets, " +
-			"'C' to return to the middle of the cell, or 'L' to check out the lock";
+			text.text = "All John sees is his ugly mug staring back at him. He needs to figure out how he can escape. " + 
+			"Maybe he can use a piece of the mirror, but the last thing he needs to do is cause a scene with " + 
+			"a hand full of glass. \n\nWhat is John's next move? \n\nPress 'S' to check out the sheets, " +
+			"press 'C' to return to the middle of the cell, or press 'L' to check out the lock";
 
 			if (Input.GetKeyDown(KeyCode.S)) {
 				myState = States.sheet_start;
@@ -143,9 +144,9 @@ public class TextController : MonoBehaviour {
 				myState = States.lock0;
 			}
 		} else {
-			text.text = "John looked at himself in the mirror. His time was running thin. A quick look at the " + 
-			"door and it seemed like nobody was around. With a windup and a swing, he broke the mirror! \"Seven years bad luck\" " + 
-			"John snickered. Carefully picking up a shard of the mirror and John turned towards the lock. \n\n" +
+			text.text = "John looks at himself in the mirror. His time is running thin. A quick look at the door gives him " + 
+			"the sense that nobody is around. With a windup and a swing, he breaks the mirror! \"Seven years bad luck\" " + 
+			"John snickers. Carefully picking up a shard of the mirror, John turns towards the lock. \n\n" +
 			"Press 'L' to check out the lock";
 
 			mirrorInHand = true;			
@@ -156,7 +157,7 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_sheet_start () {
-		text.text = "John went over to the sheets. He grabbed the sheets and wrapped them around his hand.\n\n " + 
+		text.text = "John heads over to the sheets. He grabbs the thickest layer and wraps them around his hand.\n\n" + 
 		"Press 'C' to return to the center of the room, press 'M' to go to the Mirror or press 'L' to go check out the lock.";
 		sheetsInHand = true;
 
@@ -173,7 +174,7 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_sheet_in_hand() {
-		text.text = "John already had the sheets in hand. \n\nWhat should John do next? \n\nPress 'C' to " + 
+		text.text = "John has the sheets wrapped around his hand. \n\nWhat should John do next? \n\nPress 'C' to " + 
 		"return to the center of the cell, 'M' to head to the mirror, 'L' to check out the lock";
 		sheetsInHand = true;
 
@@ -191,17 +192,17 @@ public class TextController : MonoBehaviour {
 
 	void state_lock0() {
 		if (sheetsInHand && mirrorInHand) {
-			text.text = "John had the only tool he could scrap together while in isolation. He got to " + 
-			"work and after fiddling around with the lock, it finally cracked open!\n\n" + 
-			"press 'R' to make a run for it!";
+			text.text = "John has the only tool he could scrap together while stuck in the cell. He begins " + 
+			"fiddling around with the lock, and, by some miracle, it cracks open!\n\n" + 
+			"Press 'R' to make a run for it!";
 
 			if (Input.GetKeyDown(KeyCode.R)) {
 				myState = States.running;
 			}
 
 		} else {
-			text.text = "John looked at his hand and looked at the lock. Not even the hardest swing of his fist was " + 
-			"going to break through that lock. He was going to have to find a way to pick the lock\n\nWhat should John" +
+			text.text = "John looks at his hand and looks at the lock. Not even the hardest swing of his fist will be " + 
+			"enough to break through that lock. He is going to have to find a way to pick the lock\n\nWhat should John" +
 			"do next? \n\nPress 'M' to check out the mirror, or 'C' to head back to the middle of the room.";
 
 			if (Input.GetKeyDown(KeyCode.M)) {
@@ -215,8 +216,8 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_running () {
-		text.text = "John peaked his head out the cell and looked to his left and to his right, nobody around."+ 
-		"Unsure of where he should go, he hesitates for a moment... \n\nWhich direction should John head?" +
+		text.text = "John pokes his head out the cell and looks to his left and right. Luckily there is nobody around."+ 
+		"Unsure of where he should go, he hesitates for a moment. \n\nIn which direction should John head?" +
 		"\n\n'L' for left, 'R' for right";
 
 		if (Input.GetKeyDown(KeyCode.L)) {
@@ -229,8 +230,8 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_left() {
-		text.text = "John heads down the hall and finds the back of the police station. A fire exit! John lifts " + 
-		"the window open and steps out. This was his only chance. \n\nPress 'B' to make a break for it.";
+		text.text = "John heads down the hall and is met the back of the police station. A fire exit! John lifts " + 
+		"the window open and steps out. This is his only chance. \n\nPress 'B' to make a break for it.";
 
 		if (Input.GetKeyDown(KeyCode.B)) {
 			myState = States.outside;
@@ -238,8 +239,8 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_right() {
-		text.text = "John heads down the hall and finds the front of the police station. Everyone seems to be " + 
-		"head down in work. \"Should I just run for it?\" he thought. \n\nPress 'B' to make a break for it, press 'T' to turn around.";
+		text.text = "John heads down the hall and finds the front of the police station. Everyone seems to have their head down in work. " + 
+		"\"Should I just run for it?\" he thinks to himself. \n\nPress 'B' to make a break for it, press 'T' to turn around.";
 
 		if (Input.GetKeyDown(KeyCode.B)) {
 			myState = States.death;
@@ -249,8 +250,8 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_death() {
-		text.text = "John burst into a sprint heading for the door. Heads turn, some get out of their chair," + 
-		" and one officer yells \"Freeze\" but it was too late. John wasn't going to stop now. He was so close to outside!" + 
+		text.text = "John bursts into a sprint heading for the door. Heads turn and some officers get out of their chairs." + 
+		" One officer yells \"Freeze\" but it's too late. John can't stop now. He was so close to getting outside!" + 
 		"*BANG* *BANG* *BANG* *Thud* \n\nGame Over \n\nPress 'P' to play again"; 
 
 		if (Input.GetKeyDown(KeyCode.P)) {
@@ -261,8 +262,8 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_outside() {
-		text.text = "John exited the police station and started climbing down the fire escape. To his right was a group of empty parked " + 
-		"police cars and to his left was another alley. \n\n Which direction should John head? \n\n" + 
+		text.text = "John exits the police station and start climbing down the fire escape. To his right is a group of empty parks " + 
+		"police cars and to his left is another alley. \n\n Which direction should John head? \n\n" + 
 		"Press 'L' to head toward the alley or 'R' to head for the cop car";
 
 
@@ -276,8 +277,8 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_alley() {
-		text.text = "John turned the corner and was met with a large wall. He did track and field in high school but this wall was pretty " + 
-		"high. Alas, this was the direction he chose to head. It wasn't too late for him to turn back though. \n\n Press 'b' " + 
+		text.text = "John turns the corner and is met with a large wall. He ran track and field in high school but this wall is pretty " + 
+		"high. Alas, this is the direction he chose to head. It issn't too late for him to turn back though. \n\nPress 'B' " + 
 		"to turn back and head to the police cars, or press 'W' to step up to the wall";
 
 		if (Input.GetKeyDown(KeyCode.B)) {
@@ -290,15 +291,15 @@ public class TextController : MonoBehaviour {
 	}
 	void state_wall() {
 		if (jumped || jumped2) {
-			text.text = "After attempting the jump he knew he wouldn't make it. He had to go back. Hopefully" + 
-			"he hadn't wasted too much time. \n\nPress 'b' to go back in the opposite direction";
+			text.text = "After attempting the jump he knows he can't make it. He has to go back. Hopefully" + 
+			"he hasn't wasted too much time. \n\nPress 'b' to go back in the opposite direction";
 
 			if (Input.GetKeyDown(KeyCode.B)) {
 				myState = States.police_cars;
 			}
 		} else {
-			text.text = "He stepped up to the wall. Boy was it high. 'Should I just go back' he thought to himself." + 
-			"\n\nPress 'b' to go back to the police cars, or press 'j' to jump";
+			text.text = "He steps up to the wall. Boy is it high. 'Should I just go back' he thinks to himself." + 
+			"\n\nPress 'B' to go back to the police cars, or press 'J' to jump";
 
 			if (Input.GetKeyDown(KeyCode.B)) {
 				myState = States.police_cars;
@@ -312,7 +313,7 @@ public class TextController : MonoBehaviour {
 	void state_jump() {
 		jumped = true;
 
-		text.text = "He gave it a running start and smacked his body against the well. 'Was I close?' he thought." +
+		text.text = "He gave it a running start and his body smacks against the well. 'Was I close?' he thought." +
 		"He couldn't tell. \n\nPress 'j' to try again";
 
 		
@@ -322,7 +323,7 @@ public class TextController : MonoBehaviour {
 	}
 	void state_jump2() {
 		text.text = "He gave it another attempt with everything he had. Running and jumping as fast and " + 
-		"high as he could. His body smashed against the wall. He didn't make it. \n\nPress 'W' to go" +
+		"high as he could. His body smashes against the wall. He didn't make it. \n\nPress 'W' to go" +
 		" back to the wall, or press 'B' to head back to the police cars.";
 
 		if (Input.GetKeyDown(KeyCode.W)) {
@@ -336,8 +337,8 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_police_cars () {
-		text.text = "This was the moment of truth. Hoping that one of the cars was unlocked, he would have " + 
-		"just enough time to pick one car before someone noticed what he was doing. \n\n Which car should John pick? \n\n" + 
+		text.text = "This was the moment of truth. Hoping that one of the cars is unlocked, he has " + 
+		"just enough time to pick one car before someone notices what he is doing. \n\n Which car should John pick? \n\n" + 
 		"Press '1' for the first car, '2' for the second car, '3' for the third car.";
 		if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Alpha1)) {
 			myState = States.wrong_car;
@@ -350,9 +351,9 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_wrong_car () {
-		text.text = "John ran up to the car as fast as he could. He would have to be quick. Get in the car, jump it, " + 
-		"and get out of there. He attempted to open the door... Nothing. Locked. A police officer emerged from the station " + 
-		"dropped his coffee and yelled 'FREEZE'. John had a moment to decide: \n\nPress 'R' to make a run to " +
+		text.text = "John runs up to the car as fast as he can. He would have to be quick. Get in the car, jump it, " + 
+		"and get out of there. He attempts to open the door... Nothing. Locked. A police officer emerges from the station " + 
+		"drops his coffee and yells 'FREEZE'. John has a moment to decide: \n\nPress 'R' to make a run to " +
 		"the closest car, or 'G' to give in.";
 
 		if (Input.GetKeyDown(KeyCode.R)) {
@@ -365,9 +366,9 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_right_car() {
-		text.text = "He ran as fast as he could to the car. Praying it was unlocked he pulled the door open and, with his last bit of luck, " + 
-		"found the keys sitting on the dashboard. He grabbed them, turned the key and sped off with a yelling officer in his rear view " + 
-		"mirror.\n\n John was never heard from again but he managed to avoid an unwarranted end to his life. \n\n Thanks for playing! Press " + 
+		text.text = "He runs as fast as he can to the car. Praying it is unlocked he pulls the door open and, with his last bit of luck, " + 
+		"finds the keys sitting on the dashboard. He grabs them, turns the key and speeds off with a yelling officer in his rear view " + 
+		"mirror.\n\n John is never heard from again as he manages to avoid an unwarranted end to his life. \n\nThanks for playing! Press " + 
 		"'P' to play again!";
 
 		if (Input.GetKeyDown(KeyCode.P)) {
@@ -378,7 +379,7 @@ public class TextController : MonoBehaviour {
 	}
 
 	void state_give_in () {
-		text.text = "John gave in. He knew he was out of options. \n\n Game Over \n\n hanks for playing! Press 'P' to play again!";
+		text.text = "John gives in. He knew he was out of options. \n\nGame Over \n\nThanks for playing! Press 'P' to play again!";
 		
 		if (Input.GetKeyDown(KeyCode.P)) {
 			sheetsInHand = false;
