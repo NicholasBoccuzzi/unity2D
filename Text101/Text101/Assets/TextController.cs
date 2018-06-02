@@ -78,7 +78,7 @@ public class TextController : MonoBehaviour {
 		}	else if (myState == States.wall) {
 			state_wall();
 		}	else if (myState == States.give_in) {
-			state_wall();
+			state_give_in();
 		}
 	}
 
@@ -202,7 +202,7 @@ public class TextController : MonoBehaviour {
 
 		} else {
 			text.text = "John looks at his hand and looks at the lock. Not even the hardest swing of his fist will be " + 
-			"enough to break through that lock. He is going to have to find a way to pick the lock\n\nWhat should John" +
+			"enough to break through that lock. He is going to have to find a way to pick the lock\n\nWhat should John " +
 			"do next? \n\nPress 'M' to check out the mirror, or 'C' to head back to the middle of the room.";
 
 			if (Input.GetKeyDown(KeyCode.M)) {
@@ -314,7 +314,7 @@ public class TextController : MonoBehaviour {
 		jumped = true;
 
 		text.text = "He gave it a running start and his body smacks against the well. 'Was I close?' he thought." +
-		"He couldn't tell. \n\nPress 'j' to try again";
+		"He couldn't tell. \n\nPress 'J' to try again";
 
 		
 		if (Input.GetKeyDown(KeyCode.J)) {
