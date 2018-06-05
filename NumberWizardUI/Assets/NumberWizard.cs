@@ -8,7 +8,7 @@ public class NumberWizard : MonoBehaviour {
 		int min;
 		int guess;
 		public Text text;
-		int maxGuesses = 5;
+		int maxGuesses = 6;
 
 	// Use this for initialization
 	void Start () {
@@ -28,8 +28,8 @@ public class NumberWizard : MonoBehaviour {
 	void StartGame () {
 		max = 1000;
 		min = 1;
-		guess = 500;
-
+		guess = Random.Range(min, max);
+		text.text = "My first guess is: " + guess;
 		max = max + 1;
 	}
 
