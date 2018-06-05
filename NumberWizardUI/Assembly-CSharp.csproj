@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\LevelManager.cs" />
+     <Compile Include="Assets\NumberWizard.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/Users/NickyB/Desktop/gameProjects/unity2D/NumberWizardUI/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
