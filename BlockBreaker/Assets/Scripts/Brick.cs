@@ -9,6 +9,7 @@ public class Brick : MonoBehaviour {
 	public Sprite[] brickSprites;
 	public AudioClip[]  audioarray;
 	public AudioSource audioSource;
+	public Score score;
 
 	// Use this for initialization
 	void Start () {
@@ -25,11 +26,10 @@ public class Brick : MonoBehaviour {
 			audioSource.PlayOneShot(audioarray[0]);
 		}
 		health -= 1;
-
+		score.addToScore();
 	}
 
 	void Update () {
-		Debug.Log(brickSprites);
 		if (health == 3) {
 			spriteRenderer.sprite = brickSprites[2];
 		} else if (health == 2) {

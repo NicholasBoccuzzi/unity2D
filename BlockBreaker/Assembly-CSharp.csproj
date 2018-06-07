@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\LoseCollider.cs" />
      <Compile Include="Assets\Scripts\MusicPlayer.cs" />
      <Compile Include="Assets\Scripts\PaddleMovement.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/Users/NickyB/Desktop/gameProjects/unity2D/BlockBreaker/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
