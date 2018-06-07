@@ -7,15 +7,15 @@ public class LevelManager : MonoBehaviour {
 	public string lev;
 
 	void Update () {
-		if (lev == "Level_01") {
+		if (lev == "Level_01" || lev == "Level_02") {
 			Cursor.visible = false;
 		} else if (!Cursor.visible) {
 			Cursor.visible = true;
 		}
+
 	}
 
 	public void LoadLevel(string name) {
-		lev = name;
 		SceneManager.LoadScene(name);
 	}
 

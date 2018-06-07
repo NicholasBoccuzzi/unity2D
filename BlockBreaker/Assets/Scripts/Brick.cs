@@ -10,10 +10,12 @@ public class Brick : MonoBehaviour {
 	public AudioClip[]  audioarray;
 	public AudioSource audioSource;
 	public Score score;
+	private LevelManager levelManager;
 
 	// Use this for initialization
 	void Start () {
 		rend = GetComponent<Renderer>();
+		levelManager = GameObject.FindObjectOfType<LevelManager>();
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 	}
 	
