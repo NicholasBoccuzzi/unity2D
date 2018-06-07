@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour {
 
 	public PaddleMovement paddle;
 
-	private bool started = false;
+	public bool started = false;
 	private Rigidbody2D rigi;
 	private void Awake() {
 		rigi = GetComponent<Rigidbody2D>();
@@ -26,7 +26,7 @@ public class Ball : MonoBehaviour {
 
 			if (Input.GetMouseButtonDown(0)){
 				started = true;
-				rigi.velocity = new Vector2 (0f, 14f);
+				rigi.velocity = new Vector2 (.5f, 14f);
 			}
 
 		}
