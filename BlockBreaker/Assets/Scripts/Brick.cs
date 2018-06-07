@@ -9,13 +9,12 @@ public class Brick : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D(Collision2D collision) {
-		Debug.Log("Hit");
 		health -= 1; 
+		GetComponent<AudioSource> ().Play();
 	}
 
 	void Update () {
 		if (health <= 0) {
-			Debug.Log("this should be deleted");
 			Object.Destroy(gameObject);
 		}
 	}
