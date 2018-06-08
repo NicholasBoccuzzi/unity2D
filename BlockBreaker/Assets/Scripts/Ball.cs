@@ -26,7 +26,7 @@ public class Ball : MonoBehaviour {
 
 			if (Input.GetMouseButtonDown(0)){
 				started = true;
-				rigi.velocity = new Vector2 (.5f, 14f);
+				rigi.velocity = new Vector2 (.5f, 5f);
 			}
 
 		}

@@ -575,6 +575,90 @@ Prefab:
       propertyPath: score
       value: 
       objectReference: {fileID: 285627467}
+    - target: {fileID: 1672354845812772, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065007467932344, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1101579518455726, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524366790922920, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1985973346614482, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1094812859638092, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674087557757570, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681597834612726, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600412167784822, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854995525483980, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1911682024210624, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544653718014910, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177919606667598, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194876218542980, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848567394233044, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004388843521718, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359093051772586, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803349027589634, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148994698829504, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107766676297422, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446355177182428, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
+      propertyPath: m_TagString
+      value: TotalBricks
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
   m_IsPrefabParent: 0

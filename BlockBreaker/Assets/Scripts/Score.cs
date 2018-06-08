@@ -9,7 +9,6 @@ public class Score : MonoBehaviour {
 	public int currentScore;
 	// Use this for initialization
 	void Start () {
-		GameObject scoreboard = GameObject.FindWithTag("ScoreBoard");
 	}
 
 	public void addToScore () {

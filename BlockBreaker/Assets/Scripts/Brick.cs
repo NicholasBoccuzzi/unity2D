@@ -11,9 +11,16 @@ public class Brick : MonoBehaviour {
 	public AudioSource audioSource;
 	public Score score;
 	private LevelManager levelManager;
+	public static int brickCount = 0;
+	private bool TotalBricks;
 
 	// Use this for initialization
 	void Start () {
+		TotalBricks = (this.tag == "TotalBricks");
+		if (TotalBricks) {
+			brickCount++;
+		}
+		print(brickCount);
 		rend = GetComponent<Renderer>();
 		levelManager = GameObject.FindObjectOfType<LevelManager>();
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -40,6 +47,8 @@ public class Brick : MonoBehaviour {
 			spriteRenderer.sprite = brickSprites[0];
 		} else if (health <= 0) {
 			rend.enabled = false;
+			brickCount--;
+			print(brickCount);
 			Destroy(gameObject);
 		}
 	}

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 	public string lev;
+	public Brick brick;
 
 	void Update () {
 		if (lev == "Level_01" || lev == "Level_02") {
@@ -13,6 +14,7 @@ public class LevelManager : MonoBehaviour {
 			Cursor.visible = true;
 		}
 
+		BrickDestroyed();
 	}
 
 	public void LoadLevel(string name) {
@@ -21,5 +23,17 @@ public class LevelManager : MonoBehaviour {
 
 	public void QuitLevel(string name) {
 		Application.Quit();
+	}
+
+	public void LoadNextLevel() {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+	}
+
+	public void BrickDestroyed() {
+		if (Brick.brickCount <= 0)  {
+			if (lev == "Level_01" || lev == "Level_02") {
+				LoadNextLevel();
+			}
+		}
 	}
 }
