@@ -26,9 +26,15 @@ public class Ball : MonoBehaviour {
 
 			if (Input.GetMouseButtonDown(0)){
 				started = true;
-				rigi.velocity = new Vector2 (.5f, 5f);
+				rigi.velocity = new Vector2 (.5f, 8f);
 			}
 
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+		Vector2 random = new Vector2 (Random.Range(-.3f, .3f), Random.Range(0f, .3f));
+
+		GetComponent<Rigidbody2D>().velocity += random;
 	}
 }

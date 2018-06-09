@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour {
 	public string lev;
 	public Brick brick;
+	private PaddleMovement paddleMovement;
 
 	void Update () {
 		if (lev == "Level_01" || lev == "Level_02") {
@@ -17,6 +18,11 @@ public class LevelManager : MonoBehaviour {
 		BrickDestroyed();
 	}
 
+	void Start () {
+		paddleMovement = GameObject.FindObjectOfType<PaddleMovement>();
+		print(paddleMovement);
+	}
+
 	public void LoadLevel(string name) {
 		SceneManager.LoadScene(name);
 	}
@@ -26,7 +32,11 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void LoadNextLevel() {
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		if (paddleMovement.autoPlay) {
+			SceneManager.LoadScene("Level_01");
+		} else {
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		}
 	}
 
 	public void BrickDestroyed() {
