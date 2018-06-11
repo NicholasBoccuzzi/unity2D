@@ -9,29 +9,22 @@ public class LevelManager : MonoBehaviour {
 	private PaddleMovement paddleMovement = null;
 	private int timer;
 	private bool auto = false;
-	static LevelManager instance = null;
-
-	void Awake() {
-		if (instance != null) {
-			Destroy(gameObject);
-		} else {
-			instance = this;
-			GameObject.DontDestroyOnLoad(gameObject);
-		}
-	}
 
 	void Start () {
 		timer = 600;
 	}
 
 	void Update () {
-		if (lev == "Level_01" || lev == "Level_02") {
+		if (lev == "Level_Auto") {
 			if (auto == true) {
 				if (paddleMovement == null) {
 					paddleMovement = GameObject.FindObjectOfType<PaddleMovement>();
 					paddleMovement.autoPlay = true;
 				}
 			}
+
+			checkInput();
+		} else if (lev == "Level_01" || lev == "Level_02") {
 			Cursor.visible = false;
 		} else if (!Cursor.visible) {
 			Cursor.visible = true;
@@ -42,13 +35,18 @@ public class LevelManager : MonoBehaviour {
 		if (lev == "Start") {
 			timer -= 1;
 			if (timer == 0) {
-				Debug.Log("Hit zero");
 				auto = true;
-				LoadLevel("Level_01");
+				LoadLevel("Level_Auto");
 			}
 		}
 
 		BrickDestroyed();
+	}
+
+	void checkInput () {
+		if (Input.anyKeyDown) {
+			LoadLevel("Start");
+		}
 	}
 
 
@@ -61,9 +59,8 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void LoadNextLevel() {
-		if (paddleMovement.autoPlay) {
-			SceneManager.LoadScene("Level_01");
-			lev = "Level_01";
+		if (lev == "Level_Auto") {
+			SceneManager.LoadScene("Level_Auto");
 		} else {
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
@@ -71,7 +68,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void BrickDestroyed() {
 		if (Brick.brickCount <= 0)  {
-			if (lev == "Level_01" || lev == "Level_02") {
+			if (lev == "Level_01" || lev == "Level_02" || lev == "Level_Auto") {
 				LoadNextLevel();
 			}
 		}

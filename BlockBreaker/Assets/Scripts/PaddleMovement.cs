@@ -12,8 +12,12 @@ public class PaddleMovement : MonoBehaviour {
 	public LevelManager lev;
 	// Use this for initialization
 	void Start () {
+
 		ball = GameObject.FindObjectOfType<Ball>();
 		GetComponent<AudioSource> ().playOnAwake = false;
+		if (lev.lev == "Level_Auto") {
+			autoPlay = true;
+		}
 	}
 	
 	// Update is called once per frame

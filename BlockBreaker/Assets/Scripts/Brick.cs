@@ -34,7 +34,9 @@ public class Brick : MonoBehaviour {
 			audioSource.PlayOneShot(audioarray[0]);
 		}
 		health -= 1;
-		score.addToScore();
+		if (levelManager.lev != "Level_Auto") {
+			score.addToScore();
+		}
 	}
 
 	void Update () {
