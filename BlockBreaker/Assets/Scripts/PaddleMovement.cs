@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PaddleMovement : MonoBehaviour {
 
-	public bool autoPlay = false;
+	public bool autoPlay = true;
 	private Ball ball;
 	private bool started = false;
 	float xValue;

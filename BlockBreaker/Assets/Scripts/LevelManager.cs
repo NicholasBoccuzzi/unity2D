@@ -7,6 +7,14 @@ public class LevelManager : MonoBehaviour {
 	public string lev;
 	public Brick brick;
 	private PaddleMovement paddleMovement;
+	private int timer;
+
+	void Start () {
+		paddleMovement = GameObject.FindObjectOfType<PaddleMovement>();
+		print(paddleMovement);
+
+		timer = 600; 
+	}
 
 	void Update () {
 		if (lev == "Level_01" || lev == "Level_02") {
@@ -15,13 +23,21 @@ public class LevelManager : MonoBehaviour {
 			Cursor.visible = true;
 		}
 
+
+
+		if (lev == "Start") {
+			timer -= 1;
+			if (timer == 0) {
+				LoadLevel("Level_01");
+				paddleMovement.autoPlay = true;
+			} else if (Input.anyKeyDown) {
+				timer = 600;
+			}
+		}
+
 		BrickDestroyed();
 	}
 
-	void Start () {
-		paddleMovement = GameObject.FindObjectOfType<PaddleMovement>();
-		print(paddleMovement);
-	}
 
 	public void LoadLevel(string name) {
 		SceneManager.LoadScene(name);
