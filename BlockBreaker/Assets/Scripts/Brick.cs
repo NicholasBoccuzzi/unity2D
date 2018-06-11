@@ -20,7 +20,6 @@ public class Brick : MonoBehaviour {
 		if (TotalBricks) {
 			brickCount++;
 		}
-		print(brickCount);
 		rend = GetComponent<Renderer>();
 		levelManager = GameObject.FindObjectOfType<LevelManager>();
 		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -48,7 +47,6 @@ public class Brick : MonoBehaviour {
 		} else if (health <= 0) {
 			rend.enabled = false;
 			brickCount--;
-			print(brickCount);
 			Destroy(gameObject);
 		}
 	}

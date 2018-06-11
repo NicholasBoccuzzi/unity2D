@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
+	private bool autoLaunch = false;
 	private PaddleMovement paddle;
 	public bool started = false;
 	private Rigidbody2D rigi;
@@ -29,6 +30,15 @@ public class Ball : MonoBehaviour {
 				rigi.velocity = new Vector2 (.5f, 8f);
 			}
 
+		}
+	}
+
+	public void AutoPlayLaunch() {
+		started = true;
+
+		if (!autoLaunch) {
+			rigi.velocity = new Vector2 (.5f, 8f);		
+			autoLaunch = true;
 		}
 	}
 

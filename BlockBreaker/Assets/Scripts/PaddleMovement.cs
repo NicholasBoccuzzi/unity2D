@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PaddleMovement : MonoBehaviour {
 
-	public bool autoPlay = true;
+	public bool autoPlay = false;
 	private Ball ball;
 	private bool started = false;
 	float xValue;
@@ -13,14 +13,13 @@ public class PaddleMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ball = GameObject.FindObjectOfType<Ball>();
-		print(ball);
 		GetComponent<AudioSource> ().playOnAwake = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!ball) {
-			autoPlay = true;
+		if (autoPlay) {
+			started = true;
 		} else if (ball && started == false) {
 			started = ball.started;		
 		}
@@ -42,13 +41,12 @@ public class PaddleMovement : MonoBehaviour {
 			xValue = ballPos.x;
 			paddlePos.x = xValue;				
 			this.transform.position = paddlePos;
+			ball.AutoPlayLaunch();
 		}
 	}
 
 	void playerControlled () {
 		if (!autoPlay) {
-			if (!started){
-			}
 			Vector3 paddlePos = new Vector3 ( 8, this.transform.position.y, 0f);
 			if (lev.lev == "Level_02") {
 				xValue = (Input.mousePosition.x/Screen.width * -16) + 16;
