@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-/Users/NickyB/Desktop/gameProjects/unity2D/BlockBreaker/BlockBreakerFirstDemo
+/Users/NickyB/Desktop/gameProjects/unity2D/BlockBreaker/BlockBreaker
 SceneListBegin?
 Assets/_Scenes/Start.unity
 Assets/_Scenes/Level_Auto.unity

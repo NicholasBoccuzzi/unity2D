@@ -13,6 +13,7 @@ public class Brick : MonoBehaviour {
 	private LevelManager levelManager;
 	public static int brickCount = 0;
 	private bool TotalBricks;
+	// public GameObject glow;
 
 	// Use this for initialization
 	void Start () {
@@ -47,6 +48,7 @@ public class Brick : MonoBehaviour {
 		} else if (health == 1) {
 			spriteRenderer.sprite = brickSprites[0];
 		} else if (health <= 0) {
+			// Instantiate (glow, gameObject.transform.position, Quaternion.identity);
 			rend.enabled = false;
 			brickCount--;
 			Destroy(gameObject);

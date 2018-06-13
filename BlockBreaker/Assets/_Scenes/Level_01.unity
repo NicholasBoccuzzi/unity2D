@@ -979,6 +979,132 @@ Prefab:
       propertyPath: audioarray.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 497286d5eb2894e6bbd1f6d666335101, type: 3}
+    - target: {fileID: 114338586124520586, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114232210450421342, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114330719434905348, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114139293593541972, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114157567105476842, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114584998741544526, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114550589067759024, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114156050094103560, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114733155894298424, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114064940608036614, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114436050976214076, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114474312238599162, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114884112132226570, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114742545991305064, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114949786092838110, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114888113215732486, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114928421660802184, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114925727701759608, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114697670010710982, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114811910254473380, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
+    - target: {fileID: 114905573669173120, guid: c9d3fcf683efb4260b08c6b940f08c42,
+        type: 2}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 1487265499191704, guid: ce7c69c4460044080b2a705423646da8,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9d3fcf683efb4260b08c6b940f08c42, type: 2}
   m_IsPrefabParent: 0
